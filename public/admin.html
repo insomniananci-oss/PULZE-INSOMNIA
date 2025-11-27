@@ -6,6 +6,7 @@
 <title>PANEL ADMIN</title>
 <style>
   *{ box-sizing:border-box; }
+
  /* 🔐 LOGIN SIMPLE FRONTAL */
 #loginScreen{
   position:fixed;
@@ -360,8 +361,6 @@
 </head>
 <body>
 <canvas id="bg"></canvas>
- <body>
-<canvas id="bg"></canvas>
 
 <div id="loginScreen">
   <div class="login-box">
@@ -385,7 +384,8 @@
 
 <div class="shell">
   <div class="logo-wrap">
-    <img class="logo" src="/insomnia-logo.png" alt="Insomnia Logo">
+    <!-- 🔁 LOGO DEL CLIENTE: reemplazar logo-home.png por el logo del negocio -->
+    <img class="logo" src="/logo-home.png" alt="Logo del panel">
   </div>
 
   <div class="card">
@@ -471,9 +471,11 @@ for(let i=0;i<90;i++)P.push({x:Math.random()*c.width,y:Math.random()*c.height,vx
 })();
 
 const $=s=>document.querySelector(s);
+
  // 🔐 LOGIN SIMPLE (frontal) CON EXPIRACIÓN POR INACTIVIDAD
-const LOGIN_USER = "Insomnia";      // <-- CAMBIÁ ESTO SI QUERÉS
-const LOGIN_PASS = "1234";       // <-- CAMBIÁ ESTO TAMBIÉN
+// ✅ Credenciales genéricas (podés cambiarlas por cliente)
+const LOGIN_USER = "admin";      // <-- CAMBIAR POR EL USUARIO QUE QUIERAS
+const LOGIN_PASS = "1234";       // <-- CAMBIAR POR LA CONTRASEÑA QUE QUIERAS
 const SESSION_MINUTES = 10;      // minutos de inactividad antes de pedir login de nuevo
 
 const loginScreen = document.getElementById("loginScreen");
