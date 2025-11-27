@@ -16,7 +16,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-    // ✅ Pixel nuevo PX-Web
+    // ✅ Pixel (reemplazar por el del cliente si hace falta)
     fbq('init', '24730979713251511'); 
     // ✅ PageView al entrar
     fbq('track', 'PageView');
@@ -238,14 +238,16 @@
       <div class="card-inner">
 
         <div class="badge-row">
-          <span class="brand">INSOMNIA</span>
+          <!-- 🔁 Marca genérica para cualquier cliente -->
+          <span class="brand">TU MARCA</span>
           <span class="pill">
             <span class="pill-dot"></span>
             Acceso oficial
           </span>
         </div>
 
-        <img src="logo-home.png" class="slot-img" alt="Insomnia Slot">
+        <!-- 🔁 Logo genérico (el cliente puede cambiar el archivo logo-home.png) -->
+        <img src="logo-home.png" class="slot-img" alt="Logo principal">
 
         <h1>
           CREÁ TU USUARIO
@@ -253,7 +255,7 @@
         </h1>
 
         <p class="subtitle">
-          Y empezá a jugar con ventaja ahora mismo 🎰💵
+          Hacé clic en el botón para continuar por WhatsApp 🎰💵
         </p>
 
         <button class="cta-btn" id="cta-btn">
@@ -264,7 +266,7 @@
         </button>
 
         <p class="helper">
-          Si no se abre automáticamente, presioná el botón
+          Presioná el botón para continuar por WhatsApp
         </p>
 
       </div>
@@ -272,7 +274,7 @@
   </div>
 
   <footer class="footnote">
-    © GERENCIA INSOMNIA – Todos los derechos reservados
+    © 2025 – Todos los derechos reservados
   </footer>
 
   <script>
@@ -311,8 +313,7 @@
       if (e.target.closest("#cta-btn")) goToWhatsapp();
     });
 
-    // ⏱ Redirección automática a los 7 segundos si no tocó nada
-    setTimeout(goToWhatsapp, 7000);
+    // ❌ SIN redirección automática. Solo si el usuario toca el botón.
   });
   </script>
 </body>
