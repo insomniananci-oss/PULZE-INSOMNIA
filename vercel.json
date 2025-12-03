@@ -6,11 +6,11 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/",
       "has": [
         { "type": "host", "value": "admin.kalixcasino.online" }
       ],
-      "destination": "/public/admin.html"
+      "destination": "/admin"
     }
   ],
   "routes": [
