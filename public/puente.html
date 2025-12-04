@@ -5,18 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accediendo…</title>
 
-  <!-- 👇 DETECTA SUBDOMINIO ADMIN Y REDIRIGE AL PANEL 👇 -->
-  <script>
-    if (window.location.hostname === 'admin.kalixcasino.online') {
-      window.location.replace('/admin');
-    }
-  </script>
-  <!-- ☝ FIN REDIRECCIÓN SEGÚN HOST ☝ -->
-
   <!-- 💎 FUENTE MEJORADA -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- 💰 META PIXEL PX-Web -->
+  <!-- 💰 META PIXEL (PIXEL DEL CLIENTE) -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -24,15 +16,16 @@
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-    // ✅ Pixel (reemplazar por el del cliente si hace falta)
-    fbq('init', '24730979713251511'); 
-    // ✅ PageView al entrar
+    // ID del pixel del cliente
+    fbq('init', '854659140621545'); 
+
+    // Evento de visita a la landing
     fbq('track', 'PageView');
   </script>
 
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=24730979713251511&ev=PageView&noscript=1"/>
+      src="https://www.facebook.com/tr?id=854659140621545&ev=PageView&noscript=1"/>
   </noscript>
 
   <style>
@@ -153,29 +146,32 @@
       max-width:290px;
       width:78vw;
       margin:4px 0 22px;
-      filter:drop-shadow(0 0 32px rgba(177,124,255,.95));
+      filter:drop-shadow(0 0 38px rgba(177,124,255,1));
+      border-radius:28px;
+      overflow:hidden;
+      transition:all .3s ease;
     }
 
     h1{
-      font-size:1.44rem;
+      font-size:1.00rem !important;
       font-weight:700;
-      margin-bottom:50px;
+      margin-bottom:6px;
       text-shadow:0 0 10px rgba(177,124,255,.9);
       line-height:1.2;
     }
 
     .h1-line-small{
       display:block;
-      font-size:0.95rem;
+      font-size:1.05rem;
       font-weight:600;
       opacity:.96;
-      margin-top:12px;
+      margin-top:2px;
     }
 
     .subtitle{
       font-size:0.78rem;
       opacity:.96;
-      margin-bottom:20px;
+      margin-bottom:30px;
       font-weight:500;
       white-space:nowrap;
       transform: translateY(-2px);
@@ -246,24 +242,22 @@
       <div class="card-inner">
 
         <div class="badge-row">
-          <!-- 🔁 Marca genérica para cualquier cliente -->
-          <span class="brand">CASINO ONLINE</span>
+          <span class="brand">TU MARCA</span>
           <span class="pill">
             <span class="pill-dot"></span>
             Acceso oficial
           </span>
         </div>
 
-        <!-- 🔁 Logo genérico (el cliente puede cambiar el archivo logo-home.png) -->
-        <img src="logo-home.png" class="slot-img" alt="Logo principal">
+        <img src="/logo-home.png" class="slot-img" alt="Logo principal">
 
         <h1>
-         BONO DE BIENVENIDA 🎁
-          <span class="h1-line-small">CREANDO TU USUARIO AHORA MISMO</span>
+          CREÁ TU USUARIO
+          <span class="h1-line-small">EN SEGUNDOS</span>
         </h1>
 
         <p class="subtitle">
-          Hacé clic en el botón para recibir el bono ⬇️
+          Hacé clic en el botón para continuar por WhatsApp 🎰💵
         </p>
 
         <button class="cta-btn" id="cta-btn">
@@ -274,7 +268,7 @@
         </button>
 
         <p class="helper">
-          RETIROS 24/7 - GANAS Y COBRAS 
+          Presioná el botón para continuar por WhatsApp
         </p>
 
       </div>
@@ -304,13 +298,13 @@
       if (redirected) return;
       redirected = true;
 
-      // ✅ Evento de conversión para Meta
+      // Eventos de conversión para Meta cuando el usuario toca el botón
       if (window.fbq) {
-        fbq('track', 'Lead');          // evento estándar
-        fbq('trackCustom', 'WAclick'); // evento personalizado
+        fbq('track', 'Contact');        // Evento oficial de WhatsApp
+        fbq('trackCustom', 'WAclick');  // Clic real al botón de WA
       }
 
-      // 🔁 Redirección al router / round robin
+      // Redirección al router / round robin
       setTimeout(() => {
         window.location.href = "/api/r";
       }, 300);
@@ -321,7 +315,6 @@
       if (e.target.closest("#cta-btn")) goToWhatsapp();
     });
 
-    // ❌ SIN redirección automática. Solo si el usuario toca el botón.
   });
   </script>
 </body>
