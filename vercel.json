@@ -19,8 +19,10 @@
       ],
       "dest": "/public/admin.html"
     },
-    { "src": "^/$", "dest": "/public/puente.html" },
-    { "src": "^/puente$", "dest": "/public/puente.html" },
+
+    { "src": "^/$", "dest": "/public/landing.html" },
+    { "src": "^/landing$", "dest": "/public/landing.html" },
+
     { "src": "^/admin$", "dest": "/public/admin.html" },
     { "src": "^/api/(.*)$", "dest": "/api/$1.js" },
     { "src": "/(.*)$", "dest": "/public/$1" }
