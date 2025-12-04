@@ -8,7 +8,7 @@
   <!-- 💎 FUENTE MEJORADA -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- 💰 META PIXEL PX-Web -->
+  <!-- 💰 META PIXEL PX-Web (ACTUALIZADO CON EL PIXEL DEL CLIENTE) -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -16,15 +16,13 @@
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
     document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-    // ✅ Pixel (reemplazar por el del cliente si hace falta)
-    fbq('init', '24730979713251511');
-    // ✅ PageView al entrar
-    fbq('track', 'PageView');
+    fbq('init', '854659140621545'); 
+    fbq('track', 'PageView');  // Evento de visita
   </script>
 
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=24730979713251511&ev=PageView&noscript=1"/>
+      src="https://www.facebook.com/tr?id=854659140621545&ev=PageView&noscript=1"/>
   </noscript>
 
   <style>
@@ -142,13 +140,13 @@
     }
 
     .slot-img{
-  max-width:290px;
-  width:78vw;
-  margin:4px 0 22px;
-  filter:drop-shadow(0 0 38px rgba(177,124,255,1));
-  border-radius:28px;
-  overflow:hidden;
-  transition:all .3s ease;
+      max-width:290px;
+      width:78vw;
+      margin:4px 0 22px;
+      filter:drop-shadow(0 0 38px rgba(177,124,255,1));
+      border-radius:28px;
+      overflow:hidden;
+      transition:all .3s ease;
     }
 
     h1{
@@ -241,7 +239,6 @@
       <div class="card-inner">
 
         <div class="badge-row">
-          <!-- 🔁 Marca genérica -->
           <span class="brand">TU MARCA</span>
           <span class="pill">
             <span class="pill-dot"></span>
@@ -249,7 +246,6 @@
           </span>
         </div>
 
-        <!-- 🔁 Logo genérico (el cliente puede cambiar logo-home.png por el suyo) -->
         <img src="/logo-home.png" class="slot-img" alt="Logo principal">
 
         <h1>
@@ -299,13 +295,13 @@
       if (redirected) return;
       redirected = true;
 
-      // ✅ Evento de conversión para Meta
+      // Eventos de conversión para Meta cuando el usuario toca el botón
       if (window.fbq) {
-        fbq('track', 'Lead');          // evento estándar
-        fbq('trackCustom', 'WAclick'); // evento personalizado
+        fbq('track', 'Contact');        // Evento oficial de WhatsApp
+        fbq('trackCustom', 'WAclick');  // Clic real al botón de WA
       }
 
-      // 🔁 Redirección al router / round robin
+      // Redirección al router / round robin
       setTimeout(() => {
         window.location.href = "/api/r";
       }, 300);
@@ -316,7 +312,6 @@
       if (e.target.closest("#cta-btn")) goToWhatsapp();
     });
 
-    // ❌ SIN redirección automática. Solo si el usuario toca el botón.
   });
   </script>
 </body>
